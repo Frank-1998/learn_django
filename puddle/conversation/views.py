@@ -8,7 +8,7 @@ def new_conversation(request, item_pk):
     if item.created_by == request.user:
         return redirect('dashboard:index')
 
-    conversations = Conversation.objects.filter(itme=item).filter(members__in=[request.user.id])
+    conversations = Conversation.objects.filter(item=item).filter(members__in=[request.user.id])
 
     if conversations:
         pass # redirect to conversation
